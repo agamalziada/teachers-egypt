@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>موازنة التعليم مقابل الالتزام الدستوري: ربع الحد المطلوب فحسب</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Tajawal",sans-serif;background:#fff;color:#2c2c2a;direction:rtl;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-right:3px solid #BA7517;padding-right:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.06em;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-right:3px solid #BA7517;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;text-align:right;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">زاوية ثالثة · إنفوجرافيك ⑦ من ⑨</p><p class="ttl">موازنة التعليم مقابل الالتزام الدستوري: ربع الحد المطلوب فحسب</p><p class="sub">1.49% من الناتج المحلي في 2026/2027 مقابل 6% يُلزم بها الدستور</p></div>
+  <div class="callout">"نصيب التعليم من الناتج المحلي إلى 1.49 في المئة، أي ربع الالتزام الدستوري الذي تحدده المادتان 19 و21 بأربعة في المئة للتعليم قبل الجامعي واثنين في المئة للجامعي"</div>
+  
+<div style="position:relative;width:100%;height:clamp(180px,45vw,210px)"><canvas id="c7"></canvas></div>
+<div style="background:#fff4e0;border-right:3px solid #BA7517;padding:9px 12px;border-radius:0 6px 6px 0;margin-top:10px">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#7A4C0D;line-height:1.6">الموازنة ترتفع <strong>16.6%</strong> وتبقى عند ربع ما ألزم به الدستور (6% إجمالًا: 4% قبل الجامعي + 2% جامعي).</p>
+</div>
+<script>
+(function(){
+var dk=matchMedia("(prefers-color-scheme:dark)").matches;
+var tc=dk?"#b4b2a9":"#5f5e5a",gc=dk?"rgba(255,255,255,.08)":"rgba(0,0,0,.07)";
+var coral=dk?"#F0997B":"#D85A30",teal=dk?"#5DCAA5":"#1D9E75",amber=dk?"#FAC775":"#BA7517";
+new Chart(document.getElementById("c7"),{type:"bar",
+  data:{
+    labels:["التزام دستوري
+(قبل جامعي 4%)","التزام دستوري
+(جامعي 2%)","الفعلي
+(2026/2027)"],
+    datasets:[{
+      data:[4,2,1.49],
+      backgroundColor:[teal,teal,coral],
+      borderWidth:0,borderRadius:6
+    }]
+  },
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900,easing:"easeOutQuart"},
+  plugins:{legend:{display:false},
+  tooltip:{backgroundColor:dk?"#2c2c2a":"#fff",borderColor:dk?"rgba(255,255,255,.1)":"rgba(0,0,0,.08)",borderWidth:1,
+    titleColor:dk?"#d3d1c7":"#2c2c2a",bodyColor:tc,padding:10,titleFont:{family:"Tajawal"},bodyFont:{family:"Tajawal"},
+    callbacks:{label:function(c){return c.raw+"% من الناتج المحلي";}}}},
+  scales:{x:{ticks:{color:tc,font:{size:9,family:"Tajawal"}},grid:{display:false},border:{display:false}},
+    y:{min:0,max:5,ticks:{color:tc,font:{size:9,family:"Tajawal"},callback:function(v){return v+"%";}},
+      grid:{color:gc},border:{display:false}}}}
+});
+})();
+</script>
+  <p class="src">المصدر: تحليل المبادرة المصرية للحقوق الشخصية لموازنة 2026/2027 / المادتان 19 و21 من الدستور المصري</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

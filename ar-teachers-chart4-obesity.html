@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>نسبة السمنة في مصر بين النساء والرجال</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Tajawal",sans-serif;background:#fff;color:#2c2c2a;direction:rtl;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-right:3px solid #D85A30;padding-right:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.06em;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-right:3px solid #D85A30;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;text-align:right;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">زاوية ثالثة · إنفوجرافيك ④ من ⑨</p><p class="ttl">نسبة السمنة في مصر بين النساء والرجال</p><p class="sub">55.8% من النساء مقابل 24.8% من الرجال وفق الاتحاد العالمي للسمنة 2022</p></div>
+  <div class="callout">"تبلغ نسبة السمنة 55.8 في المئة بين النساء و24.8 في المئة بين الرجال في مصر"</div>
+  
+<div style="position:relative;width:100%;height:clamp(200px,50vw,230px)"><canvas id="c4"></canvas></div>
+<div style="background:#faece7;border-right:3px solid #D85A30;padding:9px 12px;border-radius:0 6px 6px 0;margin-top:10px">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#993C1D;line-height:1.6">شرط الخمسة كيلوجرامات يصطدم بواقع وطني: 94 من كل 106 مستبعدًا في الدعوى القضائية كنّ نساء.</p>
+</div>
+<script>
+(function(){
+var dk=matchMedia("(prefers-color-scheme:dark)").matches;
+var tc=dk?"#b4b2a9":"#5f5e5a",gc=dk?"rgba(255,255,255,.08)":"rgba(0,0,0,.07)";
+var coral=dk?"#F0997B":"#D85A30",blue=dk?"#85B7EB":"#378ADD",teal=dk?"#5DCAA5":"#1D9E75",amber=dk?"#FAC775":"#BA7517";
+new Chart(document.getElementById("c4"),{type:"bar",
+  data:{
+    labels:["الاتحاد العالمي للسمنة (2022)","مسح 100 مليون صحة (2019)"],
+    datasets:[
+      {label:"نساء",data:[55.8,49.49],backgroundColor:coral,borderWidth:0,borderRadius:[4,4,0,0]},
+      {label:"رجال",data:[24.8,29.51],backgroundColor:blue,borderWidth:0,borderRadius:[4,4,0,0]}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900,easing:"easeOutQuart"},
+  plugins:{
+    legend:{display:true,position:"bottom",labels:{color:tc,font:{size:10,family:"Tajawal"},boxWidth:10,padding:12}},
+    tooltip:{backgroundColor:dk?"#2c2c2a":"#fff",borderColor:dk?"rgba(255,255,255,.1)":"rgba(0,0,0,.08)",borderWidth:1,
+      titleColor:dk?"#d3d1c7":"#2c2c2a",bodyColor:tc,padding:10,titleFont:{family:"Tajawal"},bodyFont:{family:"Tajawal"},
+      callbacks:{label:function(c){return c.dataset.label+": "+c.raw+"%";}}}},
+  scales:{x:{ticks:{color:tc,font:{size:9,family:"Tajawal"}},grid:{display:false},border:{display:false}},
+    y:{min:0,max:65,ticks:{color:tc,font:{size:9,family:"Tajawal"},callback:function(v){return v+"%";}},
+      grid:{color:gc},border:{display:false}}}}
+});
+})();
+</script>
+  <p class="src">المصدر: الاتحاد العالمي للسمنة 2022 / دراسة عبء السمنة في مصر — مجلة Frontiers in Public Health 2021</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

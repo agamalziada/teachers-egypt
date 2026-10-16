@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The 150,000-teacher competition: announced target vs actual appointments</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#fff;color:#2c2c2a;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-left:3px solid #D85A30;padding-left:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-left:3px solid #D85A30;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">Zawia3 &middot; Chart 1 of 9</p><p class="ttl">The 150,000-teacher competition: announced target vs actual appointments</p><p class="sub">~61,000 appointed out of 150,000 targeted — less than half the goal after five batches</p></div>
+  <div class="callout">“Actual appointments from the start of the competition through the fifth batch do not exceed 60,000 to 62,000 teachers out of the 150,000 targeted.”</div>
+  
+<div style="margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+    <span style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a;font-weight:600">Total competition target</span>
+    <span style="font-size:clamp(11px,2.8vw,13px);font-weight:800;color:#2c2c2a">150,000</span>
+  </div>
+  <div style="height:18px;background:#f1efe8;border-radius:4px;overflow:hidden">
+    <div style="height:100%;width:100%;background:#e0ddd5;border-radius:4px"></div>
+  </div>
+</div>
+<div style="margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+    <span style="font-size:clamp(10px,2.5vw,11px);color:#1D9E75;font-weight:600">Approved by PM Madbouly for appointment (Jan 2025)</span>
+    <span style="font-size:clamp(11px,2.8vw,13px);font-weight:800;color:#1D9E75">72,000</span>
+  </div>
+  <div style="height:18px;background:#edf7f3;border-radius:4px;overflow:hidden">
+    <div id="pg1b" style="height:100%;width:0;background:#1D9E75;border-radius:4px;transition:width 1.1s .1s ease"></div>
+  </div>
+</div>
+<div style="margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+    <span style="font-size:clamp(10px,2.5vw,11px);color:#D85A30;font-weight:600">Actually appointed through the 5th batch</span>
+    <span style="font-size:clamp(11px,2.8vw,13px);font-weight:800;color:#D85A30">~61,000</span>
+  </div>
+  <div style="height:18px;background:#faece7;border-radius:4px;overflow:hidden">
+    <div id="pg1c" style="height:100%;width:0;background:#D85A30;border-radius:4px;transition:width 1.1s .2s ease"></div>
+  </div>
+</div>
+<div style="background:#fff4e0;border-left:3px solid #BA7517;padding:9px 12px;border-radius:0 6px 6px 0">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#7A4C0D;line-height:1.6">After five batches, actual appointments did not exceed <strong>41%</strong> of the announced target &mdash; while 28,600 posts were excluded from the fifth batch alone.</p>
+</div>
+<script>
+setTimeout(function(){
+  document.getElementById("pg1b").style.width="48%";
+  document.getElementById("pg1c").style.width="40.7%";
+},200);
+</script>
+  <p class="src">Source: Education Ministry source / Central Administration for Teacher Affairs / Egyptian Initiative for Personal Rights (EIPR)</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

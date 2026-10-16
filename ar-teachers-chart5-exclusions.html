@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>أسباب استبعاد المعلمين في الدعوى القضائية: 106 مستبعدًا من 17 محافظة</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Tajawal",sans-serif;background:#fff;color:#2c2c2a;direction:rtl;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-right:3px solid #D85A30;padding-right:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.06em;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-right:3px solid #D85A30;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;text-align:right;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">زاوية ثالثة · إنفوجرافيك ⑤ من ⑨</p><p class="ttl">أسباب استبعاد المعلمين في الدعوى القضائية: 106 مستبعدًا من 17 محافظة</p><p class="sub">50 بسبب الوزن · 28 بسبب الحمل · 28 بسبب الكشف الطبي</p></div>
+  <div class="callout">"106 مستبعدين، 94 امرأة و12 رجلًا من سبع عشرة محافظة، بينهم خمسون استُبعدوا بسبب الوزن و28 بسبب الحمل و28 بسبب الكشف الطبي"</div>
+  
+<div style="display:flex;gap:clamp(12px,4vw,20px);align-items:center;flex-wrap:wrap;margin-bottom:12px">
+  <div style="position:relative;width:clamp(130px,35vw,155px);height:clamp(130px,35vw,155px);flex-shrink:0;margin:0 auto">
+    <canvas id="c5"></canvas>
+  </div>
+  <div style="flex:1;min-width:min(160px,100%);display:flex;flex-direction:column;gap:8px">
+    <div style="display:flex;align-items:center;gap:9px">
+      <div style="width:11px;height:11px;border-radius:2px;background:#D85A30;flex-shrink:0"></div>
+      <div>
+        <p style="font-size:clamp(14px,3.8vw,17px);font-weight:800;color:#D85A30">50 متقدمًا</p>
+        <p style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a">الاستبعاد بسبب الوزن</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:9px">
+      <div style="width:11px;height:11px;border-radius:2px;background:#BA7517;flex-shrink:0"></div>
+      <div>
+        <p style="font-size:clamp(14px,3.8vw,17px);font-weight:800;color:#BA7517">28 متقدمة</p>
+        <p style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a">الاستبعاد بسبب الحمل</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:9px">
+      <div style="width:11px;height:11px;border-radius:2px;background:#378ADD;flex-shrink:0"></div>
+      <div>
+        <p style="font-size:clamp(14px,3.8vw,17px);font-weight:800;color:#378ADD">28 متقدمًا</p>
+        <p style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a">الاستبعاد بسبب الكشف الطبي</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background:#faece7;border-right:3px solid #D85A30;padding:9px 12px;border-radius:0 6px 6px 0">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#993C1D;line-height:1.6"><strong>89%</strong> من المستبعدين نساء — من 17 محافظة — واستُبعد نصفهم بسبب الوزن وحده.</p>
+</div>
+<script>
+(function(){
+var dk=matchMedia("(prefers-color-scheme:dark)").matches;
+var coral=dk?"#F0997B":"#D85A30",amber=dk?"#FAC775":"#BA7517",blue=dk?"#85B7EB":"#378ADD";
+new Chart(document.getElementById("c5"),{type:"doughnut",
+  data:{labels:["وزن (50)","حمل (28)","كشف طبي (28)"],
+    datasets:[{data:[50,28,28],backgroundColor:[coral,amber,blue],borderWidth:3,borderColor:dk?"#1a1a18":"#fff",hoverOffset:4}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:"60%",
+  animation:{animateRotate:true,duration:1000,easing:"easeOutQuart"},
+  plugins:{legend:{display:false},
+  tooltip:{backgroundColor:dk?"#2c2c2a":"#fff",borderColor:dk?"rgba(255,255,255,.1)":"rgba(0,0,0,.08)",borderWidth:1,
+    titleColor:dk?"#d3d1c7":"#2c2c2a",bodyColor:dk?"#b4b2a9":"#5f5e5a",padding:10,
+    titleFont:{family:"Tajawal"},bodyFont:{family:"Tajawal"}}}}
+});
+})();
+</script>
+  <p class="src">المصدر: المبادرة المصرية للحقوق الشخصية — دعوى أمام المحكمة الإدارية بمجلس الدولة، ديسمبر 2023</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>

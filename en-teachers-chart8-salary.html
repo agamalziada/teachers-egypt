@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contract teacher pay vs the legal minimum wage</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#fff;color:#2c2c2a;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-left:3px solid #D85A30;padding-left:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+  .ttl{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .sub{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-left:3px solid #D85A30;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .src{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){body{background:#1a1a18;color:#d3d1c7;}.callout{background:#2c2c2a;color:#b4b2a9;}.sub,.src{color:#b4b2a9;}}
+</style>
+</head>
+<body><div id="root">
+  <div class="hdr"><p class="tag">Zawia3 &middot; Chart 8 of 9</p><p class="ttl">Contract teacher pay vs the legal minimum wage</p><p class="sub">4,800 EGP at best vs a 7,000 EGP minimum wage — a 30% shortfall</p></div>
+  <div class="callout">“A contract teacher today earns fifty pounds per lesson, with a maximum of 24 lessons per week — that is 4,800 pounds a month at best, below the minimum wage of 7,000 pounds.”</div>
+  
+<div class="cards" style="margin-bottom:12px">
+  <div class="card" style="background:#faece7;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#993C1D;margin-bottom:2px">Max monthly pay for a contract teacher</p>
+    <p style="font-size:clamp(24px,6.5vw,30px);font-weight:800;color:#D85A30;line-height:1.1" id="n1">0</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">EGP (24 lessons x 50 EGP)</p>
+  </div>
+  <div class="card" style="background:#edf7f3;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:2px">Legal minimum wage</p>
+    <p style="font-size:clamp(24px,6.5vw,30px);font-weight:800;color:#1D9E75;line-height:1.1" id="n2">0</p>
+    <p style="font-size:clamp(10px,2.5vw,11px);color:#888780">EGP per month</p>
+  </div>
+</div>
+<div style="margin-bottom:10px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+    <span style="font-size:clamp(10px,2.5vw,11px);color:#5f5e5a;font-weight:600">Contract teacher pay as a share of the minimum wage</span>
+    <span style="font-size:clamp(11px,2.8vw,12px);font-weight:800;color:#D85A30">68.6%</span>
+  </div>
+  <div style="height:14px;background:#f1efe8;border-radius:4px;overflow:hidden">
+    <div id="pg8" style="height:100%;width:0;background:#D85A30;border-radius:4px;transition:width 1.2s ease"></div>
+  </div>
+</div>
+<div style="background:#faece7;border-left:3px solid #D85A30;padding:9px 12px;border-radius:0 6px 6px 0">
+  <p style="font-size:clamp(10px,2.5vw,11px);color:#993C1D;line-height:1.6">A teacher excluded from permanent appointment returns to the same classroom earning more than <strong>30%</strong> below the legal minimum wage.</p>
+</div>
+<script>
+(function(){
+  var s=null;
+  function cu(ts){
+    if(!s)s=ts;var p=Math.min((ts-s)/900,1),e=1-Math.pow(1-p,3);
+    document.getElementById("n1").textContent=Math.round(e*4800).toLocaleString();
+    document.getElementById("n2").textContent=Math.round(e*7000).toLocaleString();
+    if(p<1)requestAnimationFrame(cu);
+    else{document.getElementById("n1").textContent="4,800";document.getElementById("n2").textContent="7,000";}
+  }
+  setTimeout(function(){requestAnimationFrame(cu);document.getElementById("pg8").style.width="68.6%";},200);
+})();
+</script>
+  <p class="src">Source: Egyptian Ministry of Education data / Egyptian legal minimum wage</p>
+</div>
+<script>
+(function(){function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+setTimeout(notify,1400);window.addEventListener("resize",notify);
+try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}})();
+</script></body></html>
